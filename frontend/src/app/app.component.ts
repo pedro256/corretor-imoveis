@@ -3,11 +3,12 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.page.html',
-  styleUrls: ['./app.page.css']
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppPage {
+export class AppComponent {
   
+  authenticated: boolean = false
 
   constructor(private modalService: NgbModal) {
   }
