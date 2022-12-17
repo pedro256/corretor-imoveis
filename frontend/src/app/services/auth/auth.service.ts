@@ -13,7 +13,7 @@ export class AuthService {
         private api:ApiService
     ) { }
 
-    login(email:string,password:string){
-        return this.api.get('auth', {email,password})
+    login(email:string,password:string):Observable<IResponseLogin>{
+        return this.api.get<IResponseLogin>('auth', {email,password})
     }
 }

@@ -3,17 +3,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ApiService } from 'src/app/services/api/api.service';
+import { ConverterService } from 'src/app/services/api/converter.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
-import { LoginPage } from './login.component';
+import { LoginComponent } from './login.component';
 
 @NgModule({
   declarations: [
-    LoginPage
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
   ],
-  providers: [],
+  providers: [
+  ],
 })
 export class LoginModule { }
