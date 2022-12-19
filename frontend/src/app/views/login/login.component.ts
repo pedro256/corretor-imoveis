@@ -26,11 +26,7 @@ export class LoginComponent {
 
   login(){
 
-    // this.authService.login(this.email,this.password).subscribe(data=>{
-    //   if(data.success){
-        
-    //   }
-    // })
+    this.authService.login(this.email,this.password)
 
     console.log("email",this.email);
     console.log("password",this.password);

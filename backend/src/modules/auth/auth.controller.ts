@@ -1,5 +1,6 @@
 import { Body, Controller, Post, HttpStatus, HttpException } from "@nestjs/common";
-import { HttpCode } from "@nestjs/common/decorators";
+import { Get, HttpCode, UseGuards } from "@nestjs/common/decorators";
+import { AuthGuard } from "@nestjs/passport";
 import { AuthService } from "./auth.service";
 
 
@@ -25,4 +26,14 @@ export class AuthController {
         }
         return await this.authService.login(result);
     }
+
+    @Get("/test")
+    @UseGuards(AuthGuard('jwt'))
+    @HttpCode(HttpStatus.OK)
+    async test() {
+        return process.env.JWT_PRIV_KEY
+    }
+
+
+
 }
