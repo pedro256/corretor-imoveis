@@ -6,9 +6,9 @@ import { MockUsers } from 'src/mocks/user.data';
 export class AuthService {
     constructor(private jwtService: JwtService) { }
 
-    async validateUser(username: string, password: string): Promise<any> {
+    async validateUser(email: string, password: string): Promise<any> {
 
-        const user = MockUsers.filter(x =>x.email == username)[0];
+        const user = MockUsers.filter(x =>x.email == email)[0];
 
         if (!user) return null;
 
