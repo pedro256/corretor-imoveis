@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { LoginComponent } from './login.component';
+import { HomeComponent } from './home.component';
 
 @NgModule({
   declarations: [
-    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -17,4 +17,4 @@ import { LoginComponent } from './login.component';
   providers: [
   ],
 })
-export class LoginModule { }
+export class HomeModule { }

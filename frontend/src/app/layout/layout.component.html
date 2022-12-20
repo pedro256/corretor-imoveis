@@ -1,4 +1,48 @@
-<div>
-    <h1>jeje</h1>
-    <router-outlet></router-outlet>
-</div>
+
+<header>
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse sidebar-color">
+        <div class="position-sticky">
+            <div class="list-group list-group-flush mx-3 mt-4">
+                <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                    <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>MEUS DADOS</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
+                    <i class="fas fa-chart-area fa-fw me-3"></i><span>IMÓVEIS</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i
+                        class="fas fa-lock fa-fw me-3"></i><span>CLIENTES</span></a>
+                        
+            </div>
+        </div>
+    </nav>
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light fixed-top navbar-color">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+                aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <a class="navbar-brand" href="#">
+                <img src="../../assets/imgs/logo.png" height="25" alt="logo" loading="lazy" />
+            </a>
+            
+            <ul class="navbar-nav ms-auto d-flex flex-row">
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle"
+                            height="22" alt="" loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main style="margin-top: 58px">
+    <div class="container pt-4">
+        <router-outlet></router-outlet>
+    </div>
+</main>
