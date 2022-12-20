@@ -94,7 +94,3 @@ export class ApiService {
 }
 
 
-@Injectable()
-export class ApplicationService {
-
-}

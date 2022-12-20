@@ -31,7 +31,9 @@ export class AuthController {
     @UseGuards(AuthGuard('jwt'))
     @HttpCode(HttpStatus.OK)
     async test() {
-        return process.env.JWT_PRIV_KEY
+        return {
+            authenticated:true
+        }
     }
 
 

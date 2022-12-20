@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -12,8 +13,10 @@ export class LoginComponent {
   
   email:string = "";
   password:string = "";
+  @Output() onSingIn:EventEmitter<any> = new EventEmitter();
   constructor(
-    private authService:AuthService
+    private authService:AuthService,
+    private router: Router
   ) {
   }
 
@@ -25,11 +28,13 @@ export class LoginComponent {
   }
 
   login(){
-
-    this.authService.login(this.email,this.password)
-
-    console.log("email",this.email);
-    console.log("password",this.password);
+    this.authService.login(this.email,this.password).subscribe(
+      resposta => { 
+        console.log("response",resposta)
+        this.onSingIn.emit()
+      },
+      err => alert(err.message)
+    )
   }
 
 }
