@@ -24,7 +24,7 @@ export const MockUsers:Array<IMockUser> = [
         surname:"Oitie",
         email:"eeewr32e2w22@mail.com",
         password:"1234",
-        type: 1
+        type: 3
     },
     {
         id:3,

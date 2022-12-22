@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import Profile from 'src/view-models/profile-jwt';
 import { ApiService } from './services/api/api.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { ApiService } from './services/api/api.service';
 export class AppComponent implements OnInit{
   
   authenticated: boolean = false
+  profile: Profile = new Profile();
 
   constructor(
     private modalService: NgbModal,
@@ -20,7 +22,10 @@ export class AppComponent implements OnInit{
     const token = this.apiService.getToken();
     if(token.length){
       this.apiService.get("auth/test").subscribe(
-        (response:any) => this.authenticated = response.authenticated,
+        (response:any) => {
+          this.authenticated = response.authenticated
+          this.profile = response.user;
+        },
         err => console.error(err)
       )
     }else{

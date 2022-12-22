@@ -1,7 +1,8 @@
 import { Body, Controller, Post, HttpStatus, HttpException } from "@nestjs/common";
-import { Get, HttpCode, UseGuards } from "@nestjs/common/decorators";
+import { Get, HttpCode, Request, UseGuards } from "@nestjs/common/decorators";
 import { AuthGuard } from "@nestjs/passport";
 import { AuthService } from "./auth.service";
+import {MockUsers} from '../../mocks/user.data'
 
 
 //@UseGuards(AuthGuard('jwt'))
@@ -30,10 +31,17 @@ export class AuthController {
     @Get("/test")
     @UseGuards(AuthGuard('jwt'))
     @HttpCode(HttpStatus.OK)
-    async test() {
-        return {
-            authenticated:true
+    async test( @Request() req) {
+        const userId = req.user.userId;
+        const {type} = MockUsers.find(x=>x.id==userId);
+
+        const response = {
+            authenticated:true,
+            user:req.user
         }
+        response.user.type = type;
+
+        return response
     }
 
 
