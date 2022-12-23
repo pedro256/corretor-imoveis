@@ -12,7 +12,8 @@ export interface IMockImmobile{
     createdAt:Date,
     description:string,
     region:string,
-    coordName:string
+    coordName:string,
+    imgUrl:string
 }
 
 
@@ -31,7 +32,8 @@ export const MockImmobile:Array<IMockImmobile> = [
         forsale:true,
         realtorId:3,
         type:"APARTAMENTO",
-        description:"Venenatis etiam class ut curae aliquam congue vestibulum mi donec, iaculis ut non ligula sit primis blandit molestie dui, suspendisse leo congue urna libero interdum cursus vulputate. commodo vivamus vulputate tristique morbi interdum fames pulvinar, lorem cursus neque imperdiet suspendisse. venenatis urna fermentum habitasse velit orci pellentesque orci, per quisque est ante diam etiam neque, senectus consequat magna habitant ultrices eros. tristique tincidunt condimentum aptent iaculis erat posuere nisi, quam odio pharetra elit consequat adipiscing cubilia, tellus iaculis imperdiet consequat vitae justo. nam habitasse dictumst purus lobortis faucibus urna nullam cubilia dictumst litora fusce sociosqu commodo, sapien euismod cubilia feugiat primis felis platea integer ad ipsum lectus consectetur"
+        description:"Venenatis etiam cis urna fermentum habitasse velit orci pellentesque orci, per",
+        imgUrl:"https://www.shutterstock.com/image-illustration/3d-illustration-image-modern-house-260nw-1753919153.jpg"
     },
     {
         id:2,
@@ -47,6 +49,7 @@ export const MockImmobile:Array<IMockImmobile> = [
         forsale:true,
         realtorId:3,
         type:"APARTAMENTO",
-        description:"Venenatis etiam class ut curae aliquam congue vestibulum mi donec, iaculis ut non ligula sit primis blandit molestie dui, suspendisse leo congue urna libero interdum cursus vulputate. commodo vivamus vulputate tristique morbi interdum fames pulvinar, lorem cursus neque imperdiet suspendisse. venenatis urna fermentum habitasse velit orci pellentesque orci, per quisque est ante diam etiam neque, senectus consequat magna habitant ultrices eros. tristique tincidunt condimentum aptent iaculis erat posuere nisi, quam odio pharetra elit consequat adipiscing cubilia, tellus iaculis imperdiet consequat vitae justo. nam habitasse dictumst purus lobortis faucibus urna nullam cubilia dictumst litora fusce sociosqu commodo, sapien euismod cubilia feugiat primis felis platea integer ad ipsum lectus consectetur"
+        description:"Venenatis etiam class ut curae aliquam congue vestibulum mi donec, iaculis ut ",
+        imgUrl:"https://www.shutterstock.com/image-illustration/3d-illustration-image-modern-house-260nw-1753919153.jpg"
     }
 ]
