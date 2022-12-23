@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row main-description">
+        <h1>Clientes Cadastrados</h1>
+        <h3>Lista de Clientes Cadastrados</h3>
+    </div>
+    <div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading area-filter">
+                <h4 class="panel-title">Filtro</h4>
+                <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label for="nomeClient">Nome</label>
+                        <input type="text" name="nomeClient" class="form-control">
+                    </div>
+                    <div class="col-lg-5">
+                        <label for="surNameClient">Sobrenome</label>
+                        <input type="text" name="surNameClient" class="form-control">
+                    </div>
+                </div>
+
+
+                
+                
+                <div class="pull-left" style="padding: 10px;">
+                    <button class="btn btn-primary"> Filter</button>
+                </div>
+            </div>
+            
+            <table class="table">
+                <thead>
+                    <tr class="filters">
+                        <th><input type="text" class="form-control" placeholder="#" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Ações" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Nome Completo" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Email" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Endereço" disabled></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of list;let i=index;">
+                        <td>{{i+1}}</td>
+                        <td>--</td>
+                        <td>{{item.name}} {{item.surname}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.address}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

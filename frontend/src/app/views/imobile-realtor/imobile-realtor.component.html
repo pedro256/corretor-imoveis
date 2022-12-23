@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row main-description">
+        <h1>Imoveis</h1>
+        <h3>Lista de Imoveis para {{getUserType(user.type)}}</h3>
+    </div>
+    <div class="row">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading area-filter">
+                <h4 class="panel-title">Filtro</h4>
+                <br>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label for="codigoRegistro">Código Registro</label>
+                        <input type="text" name="codigoRegistro" class="form-control">
+                    </div>
+                    <div class="col-lg-5">
+                        <label for="nomeReg">Nome Imóvel</label>
+                        <input type="text" name="nomeReg" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label for="corretorAnali">Corretor Analista</label>
+                        <input type="text" name="corretorAnali" class="form-control">
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="nomeReg">Coordernador</label>
+                        <input type="text" name="nomeReg" class="form-control">
+                    </div>
+                </div>
+
+                
+                
+                <div class="pull-left" style="padding: 10px;">
+                    <button class="btn btn-primary"> Filter</button>
+                </div>
+            </div>
+            
+            <table class="table">
+                <thead>
+                    <tr class="filters">
+                        <th><input type="text" class="form-control" placeholder="#" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Ações" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Nome" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Codigo Registro" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Região" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Corretor Analista" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Data de Criação" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Coordenador" disabled></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of list;let i=index;">
+                        <td>{{i+1}}</td>
+                        <td>--</td>
+                        <td>{{item.nome}}</td>
+                        <td>{{item.codig}}</td>
+                        <td>{{item.region}}</td>
+                        <td>--</td>
+                        <td>{{item.createdAt | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{item.coordName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

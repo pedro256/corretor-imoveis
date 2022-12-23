@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row main-description">
+        <h1>Imoveis</h1>
+        <h3>Lista de Imoveis para usuário</h3>
+    </div>
+    <div class="row">
+
+        <div class="col-sm-4 col-md-4" *ngFor="let item of list">
+            <div class="row">
+                <div class="col-md-12">
+                    <img class="post-img" src="https://www.plantapronta.com.br/projetos/57/01.jpg"/>
+                    <h4 class="post-title">{{item.nome}}</h4>
+                </div>
+                <div class="col-md-12">
+                    <h5 class="post-title">{{item.price}}</h5>
+                    <div class="author">
+                        <b>{{item.address}}</b> |
+                        <time datetime="2014-01-20">{{item.createdAt}}</time>
+                    </div>
+                    <div>
+                        {{item.description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

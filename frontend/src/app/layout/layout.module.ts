@@ -1,20 +1,35 @@
 import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
+import { LOCALE_ID, NgModule } from "@angular/core";
+import { ComponentsModule } from "../components/components.module";
 import { RoutingModule } from "../route/app-routing.module";
+import { ClientsRealtorModule } from "../views/clients-realtor/clients-realtor.module";
+import { GerencialModule } from "../views/gerencial/gerencial.module";
 import { HomeModule } from "../views/home/home.module";
+import { ImobileModule } from "../views/imobile-clients/imobile.module";
+import {  ImobileRealtorModule } from "../views/imobile-realtor/imobile-realtor.module";
+import { ProfileModule } from "../views/profile/profile.module";
 import { LayoutComponent } from "./layout.component";
 
 @NgModule({
     imports:[
         RoutingModule,
         CommonModule,
-        HomeModule
+        ComponentsModule,
+        HomeModule,
+        ProfileModule,
+        ImobileRealtorModule,
+        ClientsRealtorModule,
+        ImobileModule,
+        GerencialModule
+        
     ],
     declarations:[
         LayoutComponent,
     ],
     exports:[
-        LayoutComponent
+        LayoutComponent,
+        ComponentsModule,
+        CommonModule
     ]
 })
 export class LayoutModule{}

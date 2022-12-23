@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
@@ -19,6 +19,7 @@ export class LoginComponent {
     private router: Router
   ) {
   }
+  
 
 
   onSubmit(f: NgForm){

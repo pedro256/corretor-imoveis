@@ -13,6 +13,7 @@ import realtorRoutes from './navigation-itens-group/realtor.routes';
 export class LayoutComponent implements OnInit{
   
   @Input() profile:Profile = new Profile();
+  typeUser:string = "";
   routes:Array<NavigationItemNavbar> = new Array<NavigationItemNavbar>();
 
   constructor() {
@@ -22,15 +23,19 @@ export class LayoutComponent implements OnInit{
     switch(this.profile.type){
       case 1:
         this.routes = clientsRoutes;
+        this.typeUser = "Cliente"
         break;
       case 2:
         this.routes = realtorRoutes;
+        this.typeUser = "Corretor"
         break;
       case 3:
         this.routes = coordRoutes;
+        this.typeUser = "Coordenador"
         break;
     }
   }
+
 
   
 

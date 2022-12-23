@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="../../../assets/imgs/profile.png" style="width: 100%;" alt=""
+                            class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>{{user.name}}</h4>
+
+                        <small>{{user.name}} {{user.surname}}</small>
+                        <br>
+                        <small>{{user.address}}</small>
+                        <p>
+                            <br />
+                            <i class="fa fa-envelope"></i> {{user.email}}
+                            <br />
+                            <br />
+                            <i class="fa fa-user"></i> {{getUserType(user.type)}}
+                        </p>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary">
+                                Atualizar</button>
+                            <button type="button" class="btn btn-warning" (click)="loggout()">
+                                Sair</button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

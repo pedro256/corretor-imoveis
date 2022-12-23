@@ -7,7 +7,10 @@ body {
     padding-left: 240px;
   }
 }
-
+.title-inf-navbar{
+  color: #fbfbfb ;
+  font-weight: bold;
+}
 /* Sidebar */
 .sidebar {
   position: fixed;

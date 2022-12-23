@@ -1,12 +1,13 @@
 
 
-interface IMockUser {
+export interface IMockUser {
     id:number,
     name:string,
     surname:string,
     email:string,
     type:number,
-    password:string
+    password:string,
+    address:string
 }
 
 export const MockUsers:Array<IMockUser> = [
@@ -16,15 +17,17 @@ export const MockUsers:Array<IMockUser> = [
         surname:"Martins",
         email:"pedro@mail.com",
         password:"1234",
-        type: 1
+        type: 1,
+        address:"Rua Tal de Tal, Tancredo Novo - Manaus Amazonas"
     },
     {
         id:2,
         name:"Karcls",
         surname:"Oitie",
-        email:"eeewr32e2w22@mail.com",
+        email:"edew@mail.com",
         password:"1234",
-        type: 3
+        type: 3,
+        address:"Rua Tal de Tal, 7383, Cidade Nova - Manaus Amazonas"
     },
     {
         id:3,
@@ -32,7 +35,8 @@ export const MockUsers:Array<IMockUser> = [
         surname:"Oitie",
         email:"fulano@mail.com",
         password:"1234",
-        type: 2
+        type: 2,
+        address:"Rua Funai Tal, Tancredo EE. - Manaus Amazonas"
     }
 
 ]

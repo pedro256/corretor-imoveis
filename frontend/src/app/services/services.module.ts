@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ApiService } from './api/api.service';
 import { ConverterService } from './api/converter.service';
 import { AuthService } from './auth/auth.service';
+import { UserProfileService } from './user/user-profile.service';
 
 @NgModule({
   declarations: [],
@@ -12,7 +13,8 @@ import { AuthService } from './auth/auth.service';
   providers: [
     AuthService,
     ApiService,
-    ConverterService
+    ConverterService,
+    UserProfileService
   ],
 })
 export class ServiceModule { }
