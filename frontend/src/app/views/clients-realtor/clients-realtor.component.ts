@@ -12,6 +12,7 @@ import User from 'src/view-models/models/user';
 export class ClientsRealtorComponent implements OnInit {
   
   list:Array<User> = []
+  filterTable: User = new User();
 
   constructor(
     private modalService: NgbModal,
@@ -19,7 +20,11 @@ export class ClientsRealtorComponent implements OnInit {
   ) {
   }
   ngOnInit(): void {
-    this.apiService.get("user/clients").subscribe(
+    this.findUsers()
+  }
+
+  findUsers(){
+    this.apiService.get("user/clients",this.filterTable).subscribe(
       (value) => {
         this.list = value as Array<User>
         console.log("clients",value)

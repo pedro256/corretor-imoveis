@@ -9,21 +9,30 @@
                 <h4 class="panel-title">Filtro</h4>
                 <br>
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-6">
                         <label for="nomeClient">Nome</label>
-                        <input type="text" name="nomeClient" class="form-control">
+                        <input type="text" name="nomeClient" class="form-control" [(ngModel)]="filterTable.name">
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-6">
                         <label for="surNameClient">Sobrenome</label>
-                        <input type="text" name="surNameClient" class="form-control">
+                        <input type="text" name="surNameClient" class="form-control" [(ngModel)]="filterTable.surname">
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label for="nomeClient">Email</label>
+                        <input type="text" name="nomeClient" class="form-control" [(ngModel)]="filterTable.email">
+                    </div>
+                    <div class="col-lg-8">
+                        <label for="surNameClient">Endereço</label>
+                        <input type="text" name="surNameClient" class="form-control" [(ngModel)]="filterTable.address">
+                    </div>
+                </div>
 
                 
                 
                 <div class="pull-left" style="padding: 10px;">
-                    <button class="btn btn-primary"> Filter</button>
+                    <button class="btn btn-primary" (click)="findUsers()"> Buscar </button>
                 </div>
             </div>
             
