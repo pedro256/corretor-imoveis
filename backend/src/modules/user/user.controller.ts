@@ -1,5 +1,5 @@
 import { Body, Controller, Post, HttpStatus, HttpException } from "@nestjs/common";
-import { Get, HttpCode, Param, Patch, Put, Request, UseGuards } from "@nestjs/common/decorators";
+import { Get, HttpCode, Param, Patch, Put, Query, Request, UseGuards } from "@nestjs/common/decorators";
 import { AuthGuard } from "@nestjs/passport";
 import { IMockUser, MockUsers } from '../../mocks/user.data'
 
@@ -16,8 +16,22 @@ export class UserController {
 
     @Get("/clients")
     @HttpCode(HttpStatus.OK)
-    async findall(): Promise<Array<IMockUser>> {
-        const clients = MockUsers.filter(x => x.type == 1)
+    async findall(
+        @Query() query:IMockUser
+    ): Promise<Array<IMockUser>> {
+        var clients = MockUsers.filter(x => x.type == 1)
+        if(query.email){
+            clients = clients.filter(x=>x.email.includes(query.email));
+        }
+        if(query.address){
+            clients = clients.filter(x=>x.address.includes(query.address));
+        }
+        if(query.name){
+            clients = clients.filter(x=>x.name.includes(query.name));
+        }
+        if(query.surname){
+            clients = clients.filter(x=>x.surname.includes(query.surname));
+        }
         return clients
     } 
 
