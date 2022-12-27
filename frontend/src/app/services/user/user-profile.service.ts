@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subscribable } from 'rxjs';
+import User from 'src/view-models/models/user';
 import { ApiService } from '../api/api.service';
 
 
@@ -21,6 +22,19 @@ export class UserProfileService {
                             subscriber.error(err)
                         },
                     )
+                },
+                err => {
+                    subscriber.error(err)
+                },
+            )
+        })
+    }
+
+    updateUser(user:User){
+        return new Observable((subscriber) => {
+            this.api.put('user/'+user.id,user).subscribe(
+                (value:any) => {
+                    subscriber.next(value)
                 },
                 err => {
                     subscriber.error(err)

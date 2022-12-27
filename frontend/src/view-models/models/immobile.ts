@@ -12,6 +12,7 @@ export default class Immobile{
     createdAt:Date = new Date();
     region:string;
     coordName:string;
+    realtorName:string;
 
     constructor(){
         this.nome = "";
@@ -26,5 +27,6 @@ export default class Immobile{
         this.description = "";
         this.coordName = "";
         this.region = "";
+        this.realtorName = "";
     }
 }

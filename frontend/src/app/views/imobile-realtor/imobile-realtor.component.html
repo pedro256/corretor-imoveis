@@ -11,29 +11,29 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <label for="codigoRegistro">Código Registro</label>
-                        <input type="text" name="codigoRegistro" class="form-control">
+                        <input type="text" name="codigoRegistro" class="form-control" [(ngModel)]="filterTable.codig">
                     </div>
                     <div class="col-lg-5">
                         <label for="nomeReg">Nome Imóvel</label>
-                        <input type="text" name="nomeReg" class="form-control">
+                        <input type="text" name="nomeReg" class="form-control" [(ngModel)]="filterTable.nome">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-4">
                         <label for="corretorAnali">Corretor Analista</label>
-                        <input type="text" name="corretorAnali" class="form-control">
+                        <input type="text" name="corretorAnali" class="form-control" [(ngModel)]="filterTable.realtorName">
                     </div>
                     <div class="col-lg-4">
                         <label for="nomeReg">Coordernador</label>
-                        <input type="text" name="nomeReg" class="form-control">
+                        <input type="text" name="nomeReg" class="form-control" [(ngModel)]="filterTable.coordName">
                     </div>
                 </div>
 
                 
                 
                 <div class="pull-left" style="padding: 10px;">
-                    <button class="btn btn-primary"> Filter</button>
+                    <button class="btn btn-primary" (click)="getImmobile()"> Buscar</button>
                 </div>
             </div>
             
@@ -57,7 +57,7 @@
                         <td>{{item.nome}}</td>
                         <td>{{item.codig}}</td>
                         <td>{{item.region}}</td>
-                        <td>--</td>
+                        <td>{{item.realtorName}}</td>
                         <td>{{item.createdAt | date: 'dd/MM/yyyy'}}</td>
                         <td>{{item.coordName}}</td>
                     </tr>

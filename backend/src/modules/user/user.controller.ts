@@ -19,7 +19,7 @@ export class UserController {
     async findall(): Promise<Array<IMockUser>> {
         const clients = MockUsers.filter(x => x.type == 1)
         return clients
-    } s
+    } 
 
     @Get(":id")
     @HttpCode(HttpStatus.OK)
@@ -66,6 +66,7 @@ export class UserController {
         }
         return user;
     }
+
 
 
     @Patch("/password/:id")

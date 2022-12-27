@@ -1,6 +1,7 @@
 import { Body, Controller, Post, HttpStatus, HttpException } from "@nestjs/common";
-import { Get, HttpCode, Param, Put, Request, UseGuards } from "@nestjs/common/decorators";
+import { Get, HttpCode, Param, Put, Query, Request, UseGuards } from "@nestjs/common/decorators";
 import { AuthGuard } from "@nestjs/passport";
+import BuyImmobile from "src/dto/buy-immobile";
 import { IMockImmobile, MockImmobile } from "src/mocks/immobile.data";
 import {IMockUser, MockUsers} from '../../mocks/user.data'
 
@@ -34,13 +35,45 @@ export class ImmobileController {
             price:body.price,
             realtorId:body.realtorId,
             type:body.type,
-            imgUrl:body.imgUrl
+            imgUrl:body.imgUrl,
+            realtorName: body.realtorName
         }
 
         MockImmobile.push(immob);
         return immob;
     }
 
+    @Post("buy")
+    @HttpCode(HttpStatus.OK)
+    async buy( @Body() body:BuyImmobile){
+        const immobile = MockImmobile.find(x =>x.id == body.idImmobile);
+        if(immobile){
+            immobile.forsale = false;
+            immobile.clientId = body.idUser;
+        }
+        return immobile;
+    }
+
+
+    @Put("approve/:id")
+    @HttpCode(HttpStatus.NO_CONTENT)
+    async aprovar( id:number): Promise<any> {
+        const immob = MockImmobile.find(x => x.id == id);
+        if(immob){
+            immob.approved = true;
+        }
+        return immob;
+    }
+
+    @Put("disapprove/:id")
+    @HttpCode(HttpStatus.NO_CONTENT)
+    async desaprovar( id:number): Promise<any> {
+        const immob = MockImmobile.find(x => x.id == id);
+        if(immob){
+            immob.approved = false;
+        }
+        return immob;
+    }
 
     @Put(":id")
     @HttpCode(HttpStatus.NO_CONTENT)
@@ -74,8 +107,29 @@ export class ImmobileController {
 
     @Get()
     @HttpCode(HttpStatus.OK)
-    async findAll(): Promise<Array<IMockImmobile>> {
-        return MockImmobile;
+    async findAll(
+        @Query() query:IMockImmobile
+    ): Promise<Array<IMockImmobile>> {
+        var data = MockImmobile;
+        if(query.nome!=null){
+            data = data.filter(x=>x.nome.includes(query.nome))
+        }
+        if(query.realtorName!=null){
+            data = data.filter(x=>x.realtorName.includes(query.realtorName))
+        }
+        if(query.clientId != null){
+            data = data.filter(x => x.clientId == query.clientId)
+        }
+        if(query.realtorId != null){
+            data = data.filter(x => x.realtorId == query.realtorId)
+        }
+        if(query.codig != null){
+            data = data.filter(x=>x.codig.includes(query.codig))
+        }
+        if(query.coordName != null){
+            data = data.filter(x=>x.coordName.includes(query.coordName))
+        }
+        return data;
     }
 
 

@@ -5,14 +5,17 @@ export interface IMockImmobile{
     forsale:boolean,
     price:number,
     createdByUser:number,
+    approved?:boolean 
     codig:string,
     type:string,
     realtorId:number,
     coordId:number,
+    clientId?:number,
     createdAt:Date,
     description:string,
     region:string,
     coordName:string,
+    realtorName:string,
     imgUrl:string
 }
 
@@ -25,6 +28,7 @@ export const MockImmobile:Array<IMockImmobile> = [
         codig:"OI38Y"   ,
         coordId:2,
         coordName:"Pedro",
+        realtorName:"Iyag",
         region:"AM",
         createdAt:new Date(),
         createdByUser:3,
@@ -33,7 +37,7 @@ export const MockImmobile:Array<IMockImmobile> = [
         realtorId:3,
         type:"APARTAMENTO",
         description:"Venenatis etiam cis urna fermentum habitasse velit orci pellentesque orci, per",
-        imgUrl:"https://www.shutterstock.com/image-illustration/3d-illustration-image-modern-house-260nw-1753919153.jpg"
+        imgUrl:"https://www.shutterstock.com/image-illustration/3d-illustration-image-modern-house-260nw-1753919153.jpg",
     },
     {
         id:2,
@@ -42,6 +46,7 @@ export const MockImmobile:Array<IMockImmobile> = [
         codig:"DW21"   ,
         coordId:2,
         coordName:"lUIA",
+        realtorName:"Iyag",
         region:"AM",
         createdAt:new Date(),
         createdByUser:3,

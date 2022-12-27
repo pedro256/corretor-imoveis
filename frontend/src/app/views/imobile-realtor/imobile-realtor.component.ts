@@ -14,6 +14,7 @@ export class ImobileRealtorComponent implements OnInit {
   
   list:Array<Immobile> = []
   user:User = new User();
+  filterTable: Immobile = new Immobile();
 
   constructor(
     private modalService: NgbModal,
@@ -26,7 +27,7 @@ export class ImobileRealtorComponent implements OnInit {
     this.getImmobile()
   }
   getImmobile(){
-    this.apiService.get("immobile").subscribe(
+    this.apiService.get("immobile",this.filterTable).subscribe(
       (value) => {
         this.list = value as Array<Immobile>
         console.log(value)

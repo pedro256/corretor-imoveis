@@ -1,11 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/services/api/api.service';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserProfileService } from 'src/app/services/user/user-profile.service';
 import User from 'src/view-models/models/user';
-import IUser from 'src/view-models/models/user';
-import Profile from 'src/view-models/profile-jwt';
+import { ModalEditProfile } from './modals/edit-profile/edit-profile.component';
 
 @Component({
     selector: 'app-profile-component',
@@ -13,10 +11,11 @@ import Profile from 'src/view-models/profile-jwt';
 })
 export class ProfileComponent implements OnInit {
 
-    user: User  = new User();
+    user: User = new User();
 
     constructor(
-        private profileService:UserProfileService,
+        private profileService: UserProfileService,
+        private modalService: NgbModal,
         private router: Router
     ) {
     }
@@ -26,17 +25,17 @@ export class ProfileComponent implements OnInit {
 
     ngOnInit(): void {
         this.profileService.getUser().subscribe(
-            (response)=>{
+            (response) => {
                 console.log(response)
                 this.user = response as User;
             },
             err => {
-                
+
             }
-            )
+        )
     }
-    getUserType(type:number):string{
-        switch(type){
+    getUserType(type: number): string {
+        switch (type) {
             case 1:
                 return "Cliente";
             case 2:
@@ -47,12 +46,16 @@ export class ProfileComponent implements OnInit {
                 return "Usuário";
         }
     }
-    loggout(){
+    loggout() {
         this.profileService.loggout();
-        
+
         this.router.navigate(["/"])
 
     }
 
+    openEditor(): void {
+        const modalRef = this.modalService.open(ModalEditProfile);
+        modalRef.componentInstance.user = this.user;
+    }
 
 }

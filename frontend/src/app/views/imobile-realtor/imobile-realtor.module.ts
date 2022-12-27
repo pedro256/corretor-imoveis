@@ -2,6 +2,7 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ImobileRealtorComponent } from './imobile-realtor.component';
 
 
@@ -10,7 +11,8 @@ import { ImobileRealtorComponent } from './imobile-realtor.component';
     ImobileRealtorComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [
   ],
