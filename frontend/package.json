@@ -24,6 +24,7 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.2",
     "font-awesome": "^4.7.0",
+    "html2pdf.js": "^0.10.1",
     "jquery": "^3.6.3",
     "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",

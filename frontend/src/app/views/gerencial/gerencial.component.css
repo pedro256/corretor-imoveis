@@ -66,14 +66,18 @@
 
 .fontsty {
     margin-right: -15px;
+    color: #6E6E6E;
 }
 
-.fontsty h2 {
+.fontsty h2{
     color: #6E6E6E;
     font-size: 35px;
     margin-top: 15px;
     text-align: right;
     margin-right: 30px;
+}
+.fontsty h3{
+    text-align: right;
 }
 
 .fontsty h4 {
