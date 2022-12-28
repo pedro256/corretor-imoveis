@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="row main-description">
+            <h1>Criar Novo Imóvel</h1>
+            <p>Cadastre os dados corretor para o imóvel</p>
+        </div>
+    </div>
+    <div class="row">
+        <form (ngSubmit)="onSubmit()">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="form-label" for="name">Nome</label>
+                    <input type="text" name="name" class="form-control" required [(ngModel)]="immobile.nome" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="form-label" for="description">Descrição Imóvel</label>
+                    <textarea
+                        class="form-control"
+                        name="description"
+                        rows="4"
+                        [(ngModel)]="immobile.description" 
+                    ></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <label class="form-label" for="address">Endereço</label>
+                    <input type="text" name="address" class="form-control" required [(ngModel)]="immobile.address"  />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" for="region">Região</label>
+                    <input type="text" name="region" class="form-control" required [(ngModel)]="immobile.region" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label" for="price">Preço</label>
+                    <input type="text" name="price" class="form-control" required [(ngModel)]="immobile.price" />
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" for="cod">Código Imóvel</label>
+                    <input type="text" name="cod" class="form-control" required  [(ngModel)]="immobile.codig" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="form-label" for="price">Tipo de Imóvel</label>
+                    <select class="form-control" name="price"[(ngModel)]="immobile.type" >
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label class="form-label" for="coor">Coordenador</label>
+                    <select class="form-control" name="coor" [(ngModel)]="immobile.coordId" >
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div>
+                <button type="submit" class="btn btn-success">Criar</button>
+            </div>
+            <br>
+
+        </form>
+    </div>
+</div>

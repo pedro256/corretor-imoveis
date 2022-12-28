@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ApiService } from './api/api.service';
 import { ConverterService } from './api/converter.service';
 import { AuthService } from './auth/auth.service';
+import { ImmobileService } from './immobile/immobile.service';
 import { UserProfileService } from './user/user-profile.service';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { UserProfileService } from './user/user-profile.service';
     AuthService,
     ApiService,
     ConverterService,
-    UserProfileService
+    UserProfileService,
+    ImmobileService
   ],
 })
 export class ServiceModule { }

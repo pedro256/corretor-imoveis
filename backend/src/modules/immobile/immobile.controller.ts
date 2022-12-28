@@ -132,6 +132,22 @@ export class ImmobileController {
         return data;
     }
 
+    @Get("/types")
+    @HttpCode(HttpStatus.OK)
+    async getTypesList(
+    ): Promise<any> {
+        return [
+            {
+                id:1,
+                name:"Casa",
+            },
+            {
+                id:2,
+                name:"Apartamento"
+            }
+        ]
+    }
+
 
 
 }

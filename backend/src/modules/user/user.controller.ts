@@ -32,6 +32,9 @@ export class UserController {
         if(query.surname){
             clients = clients.filter(x=>x.surname.includes(query.surname));
         }
+        if(query.type){
+            clients = clients.filter(x=>x.type == query.type);
+        }
         return clients
     } 
 

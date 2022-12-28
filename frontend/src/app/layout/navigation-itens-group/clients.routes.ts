@@ -7,10 +7,10 @@ export default [
     },
     {
         name:"IMOVEIS",
-        route:"/immobile-client"
+        route:"/immobile"
     },
     {
         name:"MEUS IMOVEIS",
-        route:"/immobile-client"
+        route:"/immobile"
     }
 ] as Array<NavigationItemNavbar>

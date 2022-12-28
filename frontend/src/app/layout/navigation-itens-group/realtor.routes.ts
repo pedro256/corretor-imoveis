@@ -7,11 +7,11 @@ export default [
     },
     {
         name:"IMOVEIS",
-        route:"/immobile-realtor"
+        route:"/immobile/realtor"
     },
     {
         name:"MEUS CLIENTES",
-        route:"/clients-realtor"
+        route:"/clients"
     },
     {
         name:"ANALISAR IMOVEIS",
