@@ -1,8 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from 'src/app/services/api/api.service';
-import Immobile from 'src/view-models/models/immobile';
-import User from 'src/view-models/models/user';
+import User from 'src/app/shared/view-models/models/user';
 
 @Component({
   selector: 'app-clients-realtor-component',
@@ -27,7 +26,6 @@ export class ClientsRealtorComponent implements OnInit {
     this.apiService.get("user/clients",this.filterTable).subscribe(
       (value) => {
         this.list = value as Array<User>
-        console.log("clients",value)
     },
     err => {
         console.error(err)

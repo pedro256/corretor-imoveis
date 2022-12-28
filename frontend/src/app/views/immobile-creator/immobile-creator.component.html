@@ -8,6 +8,12 @@
     <div class="row">
         <form (ngSubmit)="onSubmit()">
 
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="formError" >
+                {{formError}}
+                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close" (click)="clearFormError()">
+                </button>
+            </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <label class="form-label" for="name">Nome</label>
@@ -17,18 +23,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <label class="form-label" for="description">Descrição Imóvel</label>
-                    <textarea
-                        class="form-control"
-                        name="description"
-                        rows="4"
-                        [(ngModel)]="immobile.description" 
-                    ></textarea>
+                    <textarea class="form-control" name="description" rows="4"
+                        [(ngModel)]="immobile.description"></textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-8">
                     <label class="form-label" for="address">Endereço</label>
-                    <input type="text" name="address" class="form-control" required [(ngModel)]="immobile.address"  />
+                    <input type="text" name="address" class="form-control" required [(ngModel)]="immobile.address" />
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="region">Região</label>
@@ -42,14 +44,16 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="cod">Código Imóvel</label>
-                    <input type="text" name="cod" class="form-control" required  [(ngModel)]="immobile.codig" />
+                    <input type="text" name="cod" class="form-control" required [(ngModel)]="immobile.codig" />
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-12">
                     <label class="form-label" for="price">Tipo de Imóvel</label>
-                    <select class="form-control" name="price"[(ngModel)]="immobile.type" >
+                    <select class="form-control" name="price" [(ngModel)]="immobile.type">
+                        <option value="">Selecione uma opção</option>
+                        <option *ngFor="let types of listTypesImmob" [value]="types.name">{{ types.name }}</option>
                     </select>
                 </div>
             </div>
@@ -58,7 +62,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <label class="form-label" for="coor">Coordenador</label>
-                    <select class="form-control" name="coor" [(ngModel)]="immobile.coordId" >
+                    <select class="form-control" name="coor" [(ngModel)]="immobile.coordId">
+                        <option value="0">Selecione uma opção</option>
+                        <option *ngFor="let user of listCoord" [value]="user.id">{{ user.name }}</option>
                     </select>
                 </div>
             </div>

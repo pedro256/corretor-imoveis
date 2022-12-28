@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import NavigationItemNavbar from 'src/view-models/inavigation-item';
-import Profile from 'src/view-models/profile-jwt';
+import NavigationItemNavbar from 'src/app/shared/view-models/inavigation-item';
+import Profile from 'src/app/shared/view-models/profile-jwt';
 import clientsRoutes from './navigation-itens-group/clients.routes';
 import coordRoutes from './navigation-itens-group/coord.routes';
 import realtorRoutes from './navigation-itens-group/realtor.routes';

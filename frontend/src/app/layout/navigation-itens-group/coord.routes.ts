@@ -1,4 +1,4 @@
-import NavigationItemNavbar from "src/view-models/inavigation-item";
+import NavigationItemNavbar from "src/app/shared/view-models/inavigation-item";
 
 export default [
     {

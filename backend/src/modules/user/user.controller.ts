@@ -19,7 +19,7 @@ export class UserController {
     async findall(
         @Query() query:IMockUser
     ): Promise<Array<IMockUser>> {
-        var clients = MockUsers.filter(x => x.type == 1)
+        var clients = MockUsers;
         if(query.email){
             clients = clients.filter(x=>x.email.includes(query.email));
         }
@@ -34,9 +34,13 @@ export class UserController {
         }
         if(query.type){
             clients = clients.filter(x=>x.type == query.type);
+        }else{
+            clients = clients.filter(x=>x.type == 1);
         }
         return clients
     } 
+
+    
 
     @Get(":id")
     @HttpCode(HttpStatus.OK)

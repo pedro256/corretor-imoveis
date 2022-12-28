@@ -4,8 +4,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from 'src/app/services/api/api.service';
 import { UserProfileService } from 'src/app/services/user/user-profile.service';
 import { TypeProfile } from 'src/app/shared/enum/type-profile.enum';
-import Immobile from 'src/view-models/models/immobile';
-import User from 'src/view-models/models/user';
+import Immobile from 'src/app/shared/view-models/models/immobile';
+import User from 'src/app/shared/view-models/models/user';
 
 @Component({
   selector: 'app-imobile-realtor-component',

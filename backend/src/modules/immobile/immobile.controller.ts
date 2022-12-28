@@ -98,14 +98,32 @@ export class ImmobileController {
         return immob;
     }
 
+    @Get("/types")
+    @HttpCode(HttpStatus.OK)
+    async getTypesList(
+    ): Promise<any> {
+        return [
+            {
+                id:1,
+                name:"Casa",
+            },
+            {
+                id:2,
+                name:"Apartamento"
+            }
+        ]
+    }
+
+
     @Get(":id")
     @HttpCode(HttpStatus.OK)
     async findone( @Param() params): Promise<IMockImmobile> {
         const immobile = MockImmobile.find(x =>x.id == params.id);
         return immobile;
     }
+    
 
-    @Get()
+    @Get("")
     @HttpCode(HttpStatus.OK)
     async findAll(
         @Query() query:IMockImmobile
@@ -132,22 +150,7 @@ export class ImmobileController {
         return data;
     }
 
-    @Get("/types")
-    @HttpCode(HttpStatus.OK)
-    async getTypesList(
-    ): Promise<any> {
-        return [
-            {
-                id:1,
-                name:"Casa",
-            },
-            {
-                id:2,
-                name:"Apartamento"
-            }
-        ]
-    }
-
+   
 
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import Profile from 'src/view-models/profile-jwt';
+import Profile from 'src/app/shared/view-models/profile-jwt';
 import { ApiService } from './services/api/api.service';
 
 @Component({
