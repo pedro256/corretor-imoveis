@@ -40,7 +40,7 @@ export const MockUsers:Array<IMockUser> = [
     },
     {
         id:2,
-        name:"Karcls",
+        name:"Moarius",
         surname:"Oitie",
         email:"edew@mail.com",
         password:"1234",

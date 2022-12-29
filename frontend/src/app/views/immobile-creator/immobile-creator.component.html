@@ -38,9 +38,18 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-2">
                     <label class="form-label" for="price">Preço</label>
-                    <input type="text" name="price" class="form-control" required [(ngModel)]="immobile.price" />
+                    <input 
+                    currencyMask  
+                    [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" 
+                    type="text"
+                    name="price" 
+                    class="form-control input-price" 
+                    required 
+                    [(ngModel)]="immobile.price"
+
+                     />
                 </div>
                 <div class="col-md-4">
                     <label class="form-label" for="cod">Código Imóvel</label>

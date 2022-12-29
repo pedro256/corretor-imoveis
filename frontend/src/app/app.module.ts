@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
@@ -22,6 +23,7 @@ import { LoginComponent } from './views/login/login.component';
     FormsModule,
     ServiceModule,
     HttpClientModule
+
   ],
   providers: [
     ApiService,

@@ -2,7 +2,8 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { ImobileCreatorComponent } from './immobile-creator.component';
 
@@ -14,7 +15,9 @@ import { ImobileCreatorComponent } from './immobile-creator.component';
   imports: [
     ComponentsModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    CurrencyMaskModule,
+    ReactiveFormsModule
   ],
   providers: [
   ],

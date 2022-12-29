@@ -17,26 +17,35 @@ export class ImmobileController {
     @Post()
     @HttpCode(HttpStatus.CREATED)
     async create(
-        @Body() body: IMockImmobile
+        @Body() body: IMockImmobile,
+        @Request() req
     ): Promise<IMockImmobile> {
+
+        const userId = req.user.userId;
+        const user = MockUsers.find(x=>x.id==userId);
+        const coord = MockUsers.find(x=>x.id == body.coordId);
 
         const immob :IMockImmobile = {
             address:body.address,
-            codig:body.codig,
-            coordId: body.coordId,
-            coordName:body.coordName,
-            createdByUser:body.createdByUser,
-            createdAt: new Date(),
             description:body.description,
-            forsale:body.forsale,
+            codig:body.codig,
             region:body.region,
-            id: Math.floor(Math.random() * 1000),
             nome:body.nome,
             price:body.price,
-            realtorId:body.realtorId,
             type:body.type,
             imgUrl:body.imgUrl,
-            realtorName: body.realtorName
+
+            forsale:true,
+            id: Math.floor(Math.random() * 1000),
+            createdAt: new Date(),
+            approved: false,
+            
+            realtorId:user.id,
+            coordId: coord.id,
+            coordName:coord.name,
+            createdByUser:user.id,
+            realtorName: user.name
+            
         }
 
         MockImmobile.push(immob);
