@@ -1,100 +1,63 @@
 
+  
+
 # corretor-imoveis
-
- 
-  
-### Technologies
-
-  
-
-- Angular
-
-- Nestjs
-
-- docker
-
-### Descrição
-  
-
-sistema de corretora de imoveis
-
-  
-  
-
-# Rodando a aplicação
-
-  
-
-## via docker
-
-  
-
-```bash
-
-# docker
-
-$ docker-compose up #--build
-
-```
-
-  
-
-## normal
-
-  
-
-ir em cada pasta ('backend', 'frontend') e instalar as dependencias
-
-```bash
-
-# docker
-
-$ npm install #--build
-
-```
-
-  
-
-e executar as aplicações com :
-
-  
-
-```bash
-
-# docker
-
-$ npm start #--build
-
-```
-
-  
-  
-  
-  
-  
-
-apos o processo o sistema accessar a url : http://localhost:4200/
-
-
-
-# ATIVDADES E RECURSOS DA APLICAÇÃO
+corretora de imóveis onde há perfil de usuários: cliente, corretor de imoveis, coordenador.
+##  ATIVIDADES E RECURSOS DA APLICAÇÃO
 (backend/frontend)
+### coordenador
 
-## coordenador
-- aprovar imoveis (ok/ok)
-- dashboard (ok/ok)
-- listar usuário (ok/ok)
-- gerar pdf relatorio de dashboard (ok/ok)
+ - [x] aprovar imoveis 
+- [x] dashboard
+- [x] listar usuário 
+- [x] gerar pdf relatorio de dashboard 
+### corretor
+- [x] criar/atualizar novos imoveis
+- [x] atualizar dados do imovel que ele cadastrou 
+- [x] lista de imoveis 
+- [x] lista de usuário 
+### cliente
+- [x] atualizar dados
+- [x] lista de imoveis
+- [x] comprar imoveis 
+- [x]  imoveis relacionados a você 
+- [x] criar novo usuário
+### Technologies
+- **Angular**
+- **Nestjs**
+- **docker**
+### Descrição
+sistema de corretora de imoveis
+# Rodando a aplicação
+## via docker
+```bash
+# docker
+$ docker-compose up #--build
+```
+## normal
+ir em cada pasta ('backend', 'frontend') e instalar as dependencias
+```bash
+# docker
+$ npm install #--build
+```
+e executar as aplicações com :
+```bash
+# docker
+$ npm start #--build
+```  
+após o processo o sistema acessar a url : http://localhost:4200/
+# USUÁRIOS:
+**USUÁRIO TIPO CLIENT:**
+email: pedro@mail.com
+senha: 1234
 
-## corretor
-- criar/atualizar novos imoveis (ok/ok)
-- atualizar dados do imovel que ele cadastrou (ok/ok)
-- lista de imoveis (ok/ok)
-- lista de usuário (ok/ok)
+email: ticker@mail.com
+senha: 1234
 
-## cliente
-- atualizar dados (ok/ok)
-- lista de imoveis (ok)
-- comprar imoveis (ok)
-- imoveis relacionados a você (ok) 
-- criar novo usuário
+**USUÁRIO TIPO CORRETOR DE IMÓVEIS:**
+email: fulano@mail.com
+senha: 1234
+
+**USUÁRIO COORDENADOR:**
+email: edew@mail.com
+senha: 1234
