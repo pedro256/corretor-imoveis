@@ -1,4 +1,4 @@
-FROM node:12.10-slim as development
+FROM node:18.10 as development
 
 WORKDIR /app
 COPY . .
