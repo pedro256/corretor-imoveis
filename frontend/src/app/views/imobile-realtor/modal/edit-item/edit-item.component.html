@@ -1,0 +1,57 @@
+<div class="modal-header">
+  <h4 class="modal-title">Atualizar Dados de Item</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" class="form-control" [(ngModel)]="immobile.nome">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <label class="form-label" for="description">Descrição Imóvel</label>
+      <textarea class="form-control" name="description" rows="3" [(ngModel)]="immobile.description"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <label class="form-label" for="address">Endereço</label>
+      <input type="text" name="address" class="form-control" required [(ngModel)]="immobile.address" />
+    </div>
+    <div class="col-md-4">
+      <label class="form-label" for="region">Região</label>
+      <input type="text" name="region" class="form-control" required [(ngModel)]="immobile.region" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+        <label class="form-label" for="price">Preço</label>
+        <input 
+        currencyMask  
+        [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" 
+        type="text"
+        name="price" 
+        class="form-control input-price" 
+        required 
+        [(ngModel)]="immobile.price"
+
+         />
+    </div>
+    <div class="col-md-4">
+        <label class="form-label" for="cod">Código Imóvel</label>
+        <input type="text" name="cod" class="form-control" required [(ngModel)]="immobile.codig" />
+    </div>
+</div>
+
+
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-success" (click)="update()"> Salvar </button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Fechar</button>
+  </div>

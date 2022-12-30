@@ -2,6 +2,7 @@
     <div class="row main-description">
         <h1>Imoveis</h1>
         <h3>Lista de Imoveis para {{getUserType(user.type)}}</h3>
+        <small>* você pode realizar ações com os imoveis que você criou</small>
     </div>
     <div class="row">
         <div class="d-flex flex-row-reverse" *ngIf="user.type == enumTypeProfile.Realtor">
@@ -47,6 +48,7 @@
                     <tr class="filters">
                         <th><input type="text" class="form-control" placeholder="#" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Ações" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Aprovado?" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Nome" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Codigo Registro" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Região" disabled></th>
@@ -58,7 +60,17 @@
                 <tbody>
                     <tr *ngFor="let item of list;let i=index;">
                         <td>{{i+1}}</td>
-                        <td>--</td>
+                        <td *ngIf="user.type == enumTypeProfile.Realtor">
+                            <small *ngIf="item.realtorId != user.id"> <b>SEM AUTORIZAÇÃO</b> </small>
+                            <button *ngIf="item.realtorId == user.id" (click)="openModalUpdateItem(item)" type="button" class="btn btn-outline-info">atualizar</button>
+                        </td>
+                        <td *ngIf="user.type == enumTypeProfile.Coordinator">
+                            <small *ngIf="item.coordId != user.id"> <b>SEM AUTORIZAÇÃO</b> </small>
+                            <button *ngIf="item.coordId == user.id" (click)="openModalAprovar(item)" type="button" class="btn btn-outline-warning">aprovar</button>
+                        </td>
+                        <td>
+                            {{getSttAproved(item.approved)}}
+                        </td>
                         <td>{{item.nome}}</td>
                         <td>{{item.codig}}</td>
                         <td>{{item.region}}</td>

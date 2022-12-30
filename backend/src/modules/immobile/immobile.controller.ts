@@ -66,7 +66,9 @@ export class ImmobileController {
 
     @Put("approve/:id")
     @HttpCode(HttpStatus.NO_CONTENT)
-    async aprovar( id:number): Promise<any> {
+    async aprovar( 
+        @Param('id') id: number
+    ): Promise<any> {
         const immob = MockImmobile.find(x => x.id == id);
         if(immob){
             immob.approved = true;
@@ -76,7 +78,9 @@ export class ImmobileController {
 
     @Put("disapprove/:id")
     @HttpCode(HttpStatus.NO_CONTENT)
-    async desaprovar( id:number): Promise<any> {
+    async desaprovar( 
+        @Param('id') id: number
+    ): Promise<any> {
         const immob = MockImmobile.find(x => x.id == id);
         if(immob){
             immob.approved = false;

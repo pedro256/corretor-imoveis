@@ -6,6 +6,8 @@ import { UserProfileService } from 'src/app/services/user/user-profile.service';
 import { TypeProfile } from 'src/app/shared/enum/type-profile.enum';
 import Immobile from 'src/app/shared/view-models/models/immobile';
 import User from 'src/app/shared/view-models/models/user';
+import { ModalEditItemImmobile } from './modal/edit-item/edit-item.component';
+import { ModalAprovarItemImmobile } from './modal/aprovar/aprovar.component';
 
 @Component({
   selector: 'app-imobile-realtor-component',
@@ -22,7 +24,8 @@ export class ImobileRealtorComponent implements OnInit {
   constructor(
     private router: Router,
     private apiService: ApiService,
-    private profileService: UserProfileService
+    private profileService: UserProfileService,
+    private modalService: NgbModal,
   ) {
   }
   ngOnInit(): void {
@@ -63,8 +66,25 @@ export class ImobileRealtorComponent implements OnInit {
         return "Usuário";
     }
   }
+  getSttAproved(stt){
+    if(stt==undefined){
+      return "Em Analise"
+    }
+    if(stt){
+      return "Aprovado"
+    }
+    return "Reprovado"
+  }
   gotoCreateImobileView(){
     this.router.navigate(["/immobile/new"])
+  }
+  openModalUpdateItem(item:Immobile){
+    const modalRef = this.modalService.open(ModalEditItemImmobile);
+    modalRef.componentInstance.immobile = item;
+  }
+  openModalAprovar(item:Immobile){
+    const modalRef = this.modalService.open(ModalAprovarItemImmobile);
+    modalRef.componentInstance.immobile = item;
   }
 
 

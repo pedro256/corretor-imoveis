@@ -1,4 +1,5 @@
 export default class Immobile{
+    id:number;
     nome:string;
     address:string;
     forsale:boolean;
@@ -13,8 +14,10 @@ export default class Immobile{
     region:string;
     coordName:string;
     realtorName:string;
+    approved?:boolean;
 
     constructor(){
+        this.id=0;
         this.nome = "";
         this.address = "";
         this.forsale = false;
@@ -28,5 +31,6 @@ export default class Immobile{
         this.coordName = "";
         this.region = "";
         this.realtorName = "";
+        this.approved = undefined;
     }
 }
