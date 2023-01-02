@@ -37,7 +37,7 @@ $ docker-compose up #--build
 ## normal
 ir em cada pasta ('backend', 'frontend') e instalar as dependencias
 ```bash
-# docker
+# cmd
 $ npm install #--build
 ```
 e executar as aplicações com :
